@@ -18,7 +18,7 @@ const EhrWrapper = (): JSX.Element => {
             await FHIR.oauth2.init({
                 clientId: process.env.REACT_APP_CLIENT_ID,
                 scope: process.env.REACT_APP_CLIENT_SCOPE,
-                redirectUri: process.env.REACT_APP_REDIRECT_URI,
+                redirectUri: process.env.REACT_APP_REDIRECT_URI
             });
             setLoading(false);
         } catch (e: any) {

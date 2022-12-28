@@ -9,7 +9,7 @@ import ResponseView from 'pages/response_view/response_view';
 import routes from 'routes';
 
 const AppRouter = (): JSX.Element => (
-    <HashRouter>
+    <HashRouter basename={process.env.REACT_APP_REPO_NAME}>
         <Routes>
             <Route path={routes.root} element={<Navigate to={routes.patientProfile} />} />
             <Route path={routes.patientProfile} element={<PatientProfile />} />

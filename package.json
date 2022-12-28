@@ -1,6 +1,6 @@
 {
   "name": "practitioner-app",
-  "homepage": "https://htd-health.github.io/BeSmartEhR-Practitioner/",
+  "homepage": "https://htd-health.github.io/BeSmartEhR-Practitioner",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

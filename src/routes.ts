@@ -1,5 +1,5 @@
 const routes = {
-    root: '/',
+    root: '',
     patientProfile: '/patient-profile',
     formsList: '/forms-list',
     filledForms: '/filled-forms',
