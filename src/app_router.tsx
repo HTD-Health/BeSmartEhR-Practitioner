@@ -1,4 +1,4 @@
-import { BrowserRouter as HashRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import AssignedFormsContainer from 'pages/assigned_forms/assigned_forms_container';
 import FilledFormsContainer from 'pages/filled_forms/filled_forms_container';
@@ -9,7 +9,7 @@ import ResponseView from 'pages/response_view/response_view';
 import routes from 'routes';
 
 const AppRouter = (): JSX.Element => (
-    <HashRouter basename={process.env.REACT_APP_REPO_NAME}>
+    <BrowserRouter basename={process.env.REACT_APP_REPO_NAME}>
         <Routes>
             <Route path={routes.root} element={<Navigate to={routes.patientProfile} />} />
             <Route path={routes.patientProfile} element={<PatientProfile />} />
@@ -19,7 +19,7 @@ const AppRouter = (): JSX.Element => (
             <Route path={routes.formFill} element={<FormFill />} />
             <Route path={routes.responseView} element={<ResponseView />} />
         </Routes>
-    </HashRouter>
+    </BrowserRouter>
 );
 
 export default AppRouter;
