@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/BeSmartEhR-Practitioner/static/js/main.84e6a0d3.js",
+    "main.js": "/BeSmartEhR-Practitioner/static/js/main.20d2dc1a.js",
     "static/js/787.972ad387.chunk.js": "/BeSmartEhR-Practitioner/static/js/787.972ad387.chunk.js",
     "index.html": "/BeSmartEhR-Practitioner/index.html",
-    "main.84e6a0d3.js.map": "/BeSmartEhR-Practitioner/static/js/main.84e6a0d3.js.map",
+    "main.20d2dc1a.js.map": "/BeSmartEhR-Practitioner/static/js/main.20d2dc1a.js.map",
     "787.972ad387.chunk.js.map": "/BeSmartEhR-Practitioner/static/js/787.972ad387.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.84e6a0d3.js"
+    "static/js/main.20d2dc1a.js"
   ]
 }
