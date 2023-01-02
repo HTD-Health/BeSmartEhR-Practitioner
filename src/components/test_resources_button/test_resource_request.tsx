@@ -260,18 +260,29 @@ const addTestResource = async (client: Client): Promise<boolean> => {
     }
 
     if (resources?.entry?.length > 0) {
+        // const requestOptions = {
+        //     url: `Questionnaire`,
+        //     method: 'DELETE',
+        //     headers: { 'content-type': 'application/json' }
+        // };
+        // for await (const el of resources.entry) {
+        //     console.log(el);
+        //     requestOptions.url = `Questionnaire/${el.resource.id}`;
+        //     client.request(requestOptions);
+        // }
         return true;
     }
 
     const requestOptions = {
-        url: ``,
+        url: `Questionnaire`,
         method: 'POST',
         body: JSON.stringify(JSON.parse(data)),
         headers: { 'content-type': 'application/json' }
     };
 
     const createdResource = await client.request(requestOptions);
-    if (createdResource?.resourceType === 'Questionnaire') {
+
+    if (createdResource?.resource?.resourceType !== 'Questionnaire') {
         return false;
     }
     return true;
