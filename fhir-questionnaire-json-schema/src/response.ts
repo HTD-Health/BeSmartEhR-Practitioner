@@ -13,7 +13,7 @@ export const toQuestionnaireResponse = (questionnaire: Questionnaire, data: any)
         item: [],
     }
 
-    traverse(data, questionnaire.item!!, response);
+    traverse(data, questionnaire.item!, response);
     return response
 }
 
@@ -76,39 +76,39 @@ const generateAnswer = (questionnaireDefinition: QuestionnaireItem, value: any):
         return {
             valueDate: value
         }
-    } else if (questionnaireDefinition.type === 'boolean') {
+    } if (questionnaireDefinition.type === 'boolean') {
         return {
             valueBoolean: value
         }
-    } else if (questionnaireDefinition.type === 'decimal') {
+    } if (questionnaireDefinition.type === 'decimal') {
         return {
             valueDecimal: value
         }
-    } else if (questionnaireDefinition.type === 'integer') {
+    } if (questionnaireDefinition.type === 'integer') {
         return {
             valueInteger: value
         }
-    } else if (questionnaireDefinition.type === 'dateTime') {
+    } if (questionnaireDefinition.type === 'dateTime') {
         return {
             valueDateTime: value
         }
-    } else if (questionnaireDefinition.type === 'time') {
+    } if (questionnaireDefinition.type === 'time') {
         return {
             valueTime: value
         }
-    } else if (questionnaireDefinition.type === 'url') {
+    } if (questionnaireDefinition.type === 'url') {
         return {
             valueUri: value
         }
-    } else if (questionnaireDefinition.type === 'attachment') {
+    } if (questionnaireDefinition.type === 'attachment') {
         return {
             valueAttachment: value
         }
-    } else if (questionnaireDefinition.type === 'quantity') {
+    } if (questionnaireDefinition.type === 'quantity') {
         return {
             valueQuantity: value
         }
-    } else if (questionnaireDefinition.type === 'choice') {
+    } if (questionnaireDefinition.type === 'choice') {
         const option = questionnaireDefinition.answerOption?.find(e => {
             return e.valueCoding?.code === value
         })
@@ -119,7 +119,7 @@ const generateAnswer = (questionnaireDefinition: QuestionnaireItem, value: any):
                 display: option?.valueCoding?.display
             }
         }
-    } else if (questionnaireDefinition.type === 'open-choice') {
+    } if (questionnaireDefinition.type === 'open-choice') {
         const option = questionnaireDefinition.answerOption?.find(e => {
             return e.valueCoding?.code === value
         })

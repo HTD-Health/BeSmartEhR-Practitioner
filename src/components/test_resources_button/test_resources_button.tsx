@@ -17,7 +17,7 @@ const TestResourcesButton = (): JSX.Element => {
             setClient(clientTemp);
         };
         fetchClient();
-    }, [client]);
+    }, []);
 
     if (!client) {
         return <CircularProgress />;
@@ -37,7 +37,7 @@ const TestResourcesButton = (): JSX.Element => {
             <CustomSnackbar
                 open={statusSnackbar > 0}
                 onClose={() => setStatusSnackbar(0)}
-                message="Failed to get current user data"
+                message={statusSnackbar === 1 ? `Couldn't add test resource` : 'The test resource should exist now'}
                 severity={statusSnackbar === 1 ? 'error' : 'success'}
             />
             <Button variant="contained" sx={{ my: '0.5rem' }} onClick={addResource}>

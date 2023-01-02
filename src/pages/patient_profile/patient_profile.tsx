@@ -79,6 +79,7 @@ const PatientProfile = (): JSX.Element => {
                             >
                                 Assign a new Form
                             </Button>
+                            <TestResourcesButton />
                         </Box>
                     </Grid>
                 </Grid>

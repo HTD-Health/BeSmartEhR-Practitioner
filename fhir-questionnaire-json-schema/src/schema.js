@@ -1,7 +1,8 @@
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.toJSONSchema = exports.responseToJSONSchema = void 0;
 const fields_1 = require("./fields");
+
 const responseToJSONSchema = (questionnaireResponse) => {
     if (!questionnaireResponse.item || questionnaireResponse.item.length < 1)
         return;
@@ -49,7 +50,7 @@ const generateItem = (item) => {
     if (typeof fieldMapping === "function") {
         fieldMapping = fieldMapping(item, result);
     }
-    const entry = Object.assign({}, (fieldMapping || fields_1.fieldTypesMapping["string"]));
+    const entry = { ...(fieldMapping || fields_1.fieldTypesMapping.string)};
     if (item.item) {
         entry.title = "";
         entry.properties = generateItems(item.item);
@@ -58,11 +59,11 @@ const generateItem = (item) => {
             .map((subItem) => subItem.linkId);
     }
     if (item.repeats) {
-        return Object.assign({ type: "array", title: item.text, items: entry }, (entry.enum ? { uniqueItems: true } : {}));
+        return {type: "array", title: item.text, items: entry, ...(entry.enum ? { uniqueItems: true } : {})};
     }
-    else {
+    
         entry.title = item.text;
-    }
+    
     return entry;
 };
 const generateUISchemaItems = (items) => {
@@ -73,7 +74,7 @@ const generateUISchemaItems = (items) => {
     return properties;
 };
 const generateUISchemaItem = (item) => {
-    var _a, _b, _c, _d, _e, _f;
+    let _a; let _b; let _c; let _d; let _e; let _f;
     const entry = {
         "ui:placeholder": "",
     };

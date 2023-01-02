@@ -1,6 +1,7 @@
 import { Questionnaire, QuestionnaireItem } from "fhir/r4";
 import { QuestionnaireResponse } from "fhir/r5";
 import { Schema } from "jsonschema";
+
 import { fieldTypesMapping, valueFieldToValue } from "./fields";
 
 export const responseToJSONSchema = (
@@ -60,7 +61,7 @@ const generateItem = (item: QuestionnaireItem): Schema => {
   }
 
   const entry = {
-    ...(fieldMapping || fieldTypesMapping["string"]),
+    ...(fieldMapping || fieldTypesMapping.string),
   };
 
   if (item.item) {
@@ -78,9 +79,9 @@ const generateItem = (item: QuestionnaireItem): Schema => {
       items: entry,
       ...(entry.enum ? { uniqueItems: true } : {}),
     };
-  } else {
+  } 
     entry.title = item.text;
-  }
+  
 
   return entry;
 };
