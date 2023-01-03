@@ -1,4 +1,4 @@
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.toQuestionnaireResponse = void 0;
 const toQuestionnaireResponse = (questionnaire, data) => {
@@ -12,7 +12,7 @@ const toQuestionnaireResponse = (questionnaire, data) => {
 };
 exports.toQuestionnaireResponse = toQuestionnaireResponse;
 const traverse = (node, questionnaireItems, parent) => {
-    var _a, _b;
+    let _a; let _b;
     for (const [key, value] of Object.entries(node)) {
         const item = questionnaireItems.find(e => e.linkId === key);
         if (!item) {
@@ -71,47 +71,47 @@ const generateAnswer = (questionnaireDefinition, value) => {
             valueDate: value
         };
     }
-    else if (questionnaireDefinition.type === 'boolean') {
+    if (questionnaireDefinition.type === 'boolean') {
         return {
             valueBoolean: value
         };
     }
-    else if (questionnaireDefinition.type === 'decimal') {
+    if (questionnaireDefinition.type === 'decimal') {
         return {
             valueDecimal: value
         };
     }
-    else if (questionnaireDefinition.type === 'integer') {
+    if (questionnaireDefinition.type === 'integer') {
         return {
             valueInteger: value
         };
     }
-    else if (questionnaireDefinition.type === 'dateTime') {
+    if (questionnaireDefinition.type === 'dateTime') {
         return {
             valueDateTime: value
         };
     }
-    else if (questionnaireDefinition.type === 'time') {
+    if (questionnaireDefinition.type === 'time') {
         return {
             valueTime: value
         };
     }
-    else if (questionnaireDefinition.type === 'url') {
+    if (questionnaireDefinition.type === 'url') {
         return {
             valueUri: value
         };
     }
-    else if (questionnaireDefinition.type === 'attachment') {
+    if (questionnaireDefinition.type === 'attachment') {
         return {
             valueAttachment: value
         };
     }
-    else if (questionnaireDefinition.type === 'quantity') {
+    if (questionnaireDefinition.type === 'quantity') {
         return {
             valueQuantity: value
         };
     }
-    else if (questionnaireDefinition.type === 'choice') {
+    if (questionnaireDefinition.type === 'choice') {
         const option = (_a = questionnaireDefinition.answerOption) === null || _a === void 0 ? void 0 : _a.find(e => {
             var _a;
             return ((_a = e.valueCoding) === null || _a === void 0 ? void 0 : _a.code) === value;
@@ -123,7 +123,7 @@ const generateAnswer = (questionnaireDefinition, value) => {
             }
         };
     }
-    else if (questionnaireDefinition.type === 'open-choice') {
+    if (questionnaireDefinition.type === 'open-choice') {
         const option = (_c = questionnaireDefinition.answerOption) === null || _c === void 0 ? void 0 : _c.find(e => {
             var _a;
             return ((_a = e.valueCoding) === null || _a === void 0 ? void 0 : _a.code) === value;

@@ -1,4 +1,4 @@
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.valueFieldToValue = exports.fieldTypesMapping = void 0;
 exports.fieldTypesMapping = {
@@ -37,7 +37,7 @@ exports.fieldTypesMapping = {
         type: "object",
     },
     choice: (item) => {
-        var _a;
+        let _a;
         if (!item.answerOption) {
             return {
                 type: "string",
@@ -53,7 +53,7 @@ exports.fieldTypesMapping = {
             const prefixExtension = (_a = option.extension) === null || _a === void 0 ? void 0 : _a.find((extension) => extension.url ===
                 "http://hl7.org/fhir/StructureDefinition/questionnaire-optionPrefix");
             if (prefixExtension === null || prefixExtension === void 0 ? void 0 : prefixExtension.valueString) {
-                enumsNames.push((prefixExtension === null || prefixExtension === void 0 ? void 0 : prefixExtension.valueString) + ". " + option.valueCoding.display);
+                enumsNames.push(`${prefixExtension === null || prefixExtension === void 0 ? void 0 : prefixExtension.valueString  }. ${  option.valueCoding.display}`);
             }
             else {
                 enumsNames.push(option.valueCoding.display);

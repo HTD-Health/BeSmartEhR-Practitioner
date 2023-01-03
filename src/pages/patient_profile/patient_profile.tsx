@@ -9,6 +9,7 @@ import CustomSnackbar from 'components/custom_snackbar/custom_snackbar';
 import PatientCard from 'components/patient_card/patient_card';
 import SmartAppBar from 'components/smart_app_bar/smart_app_bar';
 import routes from 'routes';
+import TestResourcesButton from 'components/test_resources_button/test_resources_button';
 
 const PatientProfile = (): JSX.Element => {
     const [errorSnackbar, setErrorSnackbar] = useState(false);
@@ -78,6 +79,7 @@ const PatientProfile = (): JSX.Element => {
                             >
                                 Assign a new Form
                             </Button>
+                            <TestResourcesButton />
                         </Box>
                     </Grid>
                 </Grid>

@@ -58,7 +58,7 @@ export const fieldTypesMapping: any = {
       );
       if (prefixExtension?.valueString) {
         enumsNames.push(
-          prefixExtension?.valueString + ". " + option.valueCoding.display
+          `${prefixExtension?.valueString  }. ${  option.valueCoding.display}`
         );
       } else {
         enumsNames.push(option.valueCoding.display);
